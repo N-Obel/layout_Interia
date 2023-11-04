@@ -1,0 +1,43 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+.block--header {
+}
+
+.title {
+	font-family: "Kanit";
+	@include adaptiveValue("font-size", 40, 22);
+	font-weight: 400;
+	line-height: math.div(60, 40);
+}
+
+.label {
+	color: #6d7d7d;
+	font-family: "Kanit";
+	font-size: toRem(16);
+	line-height: math.div(24, 16);
+	letter-spacing: toRem(7);
+}
+
+.text {
+	line-height: math.div(22 , 16);
+}
+
+.link {
+	font-family: "Kanit";
+	font-size: toRem(16);
+	line-height: math.div(24, 16);
+	letter-spacing: toRem(7);
+	&::after {
+		content: "";
+		width: toRem(14);
+		height: toRem(14);
+		display: inline-block;
+		background: url("@img/arr_right.svg") 0 toRem(2.5) no-repeat;
+		margin-left: toRem(12);
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
